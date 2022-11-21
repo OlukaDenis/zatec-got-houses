@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GOT-Houses"
-include ':app'
+include(":app")
