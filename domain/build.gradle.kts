@@ -1,15 +1,18 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    kotlin("android")
+    kotlin("kapt")
+    id("kotlin-parcelize")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
     namespace = "com.domain"
-    compileSdk = 32
+    compileSdk = Versions.ProjectConstants.TARGET_SDK
 
     defaultConfig {
-        minSdk = 21
-        targetSdk = 32
+        minSdk = Versions.ProjectConstants.MINIMUM_SDK
+        targetSdk = Versions.ProjectConstants.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -34,11 +37,36 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.Gradle.KOTLIN_STDLIB)
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+    testImplementation(Dependencies.Kotlin.COROUTINE_TEST)
+    implementation(Dependencies.Kotlin.COROUTINE_ANDROID)
+    implementation(Dependencies.Kotlin.COROUTINES_PLAY_SERVICE)
+
+    implementation(Dependencies.Util.GOOGLE_GSON)
+
+    implementation(Dependencies.Hilt.HILT_WORKER)
+    implementation(Dependencies.Hilt.HILT_ANDROID)
+    kapt(Dependencies.Hilt.HILT_ANDROID_COMPILER)
+    kapt(Dependencies.Hilt.HILT_COMPILER)
+    testImplementation(Dependencies.Hilt.HILT_TEST)
+    androidTestImplementation(Dependencies.Hilt.HILT_TEST)
+    kaptAndroidTest(Dependencies.Hilt.HILT_ANDROID_COMPILER)
+
+    testImplementation(Dependencies.Test.TRUTHY)
+    testImplementation(Dependencies.Test.JUNIT)
+    testImplementation(Dependencies.Test.MOCKK)
+    testImplementation(Dependencies.Test.ROBOELECTRIC)
+    androidTestImplementation(Dependencies.Test.TRUTHY)
+    androidTestImplementation(Dependencies.Test.JUNIT_EXT)
+    androidTestImplementation(Dependencies.Test.ESPRESSO)
+    androidTestImplementation(Dependencies.Test.CORE_TESTING)
+
+    implementation(Dependencies.Room.RUNTIME)
+    implementation(Dependencies.Room.KTX)
+    kapt(Dependencies.Room.COMPILER)
+
+    implementation(Dependencies.Network.OKHTTP)
+
+    implementation(Dependencies.Util.TIMBER)
 }

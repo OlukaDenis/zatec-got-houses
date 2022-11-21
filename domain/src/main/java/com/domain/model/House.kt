@@ -1,6 +1,11 @@
 package com.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class House(
+    val id: Long,
     val ancestralWeapons: List<String>,
     val cadetBranches: List<String>,
     val coatOfArms: String,
@@ -17,4 +22,4 @@ data class House(
     val titles: List<String>,
     val url: String,
     val words: String
-)
+) : Parcelable

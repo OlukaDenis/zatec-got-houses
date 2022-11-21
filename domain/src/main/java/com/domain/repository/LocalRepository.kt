@@ -3,49 +3,32 @@ package com.domain.repository
 import com.domain.model.*
 import kotlinx.coroutines.flow.Flow
 
+/**
+ * Repository that handles local CRUD operations
+ */
 interface LocalRepository {
 
-    suspend fun saveUser(user: UserEntity)
+    /**
+     * Saves the house to the local database
+     * @param entity house
+     */
+    suspend fun saveHouse(entity: House)
 
-    suspend fun clearUsers()
+    /**
+     * Clears all houses in the local database
+     */
+    suspend fun clearHouses()
 
-    suspend fun getUser(): UserEntity?
+    /**
+     * Gets a house by ID from the local database
+     * @param id
+     * @return
+     */
+    fun getHouseById(id: Long): Flow<House?>
 
-    fun getUserById(userId: Long): Flow<UserEntity?>
-
-    suspend fun updateUser(user: UserEntity)
-
-
-    suspend fun insertPost(entity: PostEntity)
-
-    suspend fun clearPosts()
-
-    suspend fun deletePostById(postId: Long)
-
-    suspend fun updatePost(post: PostEntity)
-
-    fun getPostsByUserId(id: Long): Flow<List<PostEntity>>
-
-    fun getPosts(): Flow<List<PostEntity>>
-
-
-    suspend fun insertComment(entity: CommentEntity)
-
-    suspend fun clearComments()
-
-    suspend fun deleteCommentById(id: Long)
-
-    fun getCommentsByPostId(postId: Long): Flow<List<CommentEntity>>
-
-    suspend fun updateComment(entity: CommentEntity)
-
-
-    suspend fun insertWallet(entity: WalletEntity)
-
-    suspend fun updateWallet(entity: WalletEntity)
-
-    suspend fun getWalletBalance(userId: Long)
-
-    fun getMyWallet(userId: Long): Flow<WalletEntity>
-
-   }
+    /**
+     * Updates a house in the local database
+     * @param entity
+     */
+    suspend fun updateHouse(entity: House)
+}
