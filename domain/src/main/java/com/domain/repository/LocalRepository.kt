@@ -15,6 +15,12 @@ interface LocalRepository {
     suspend fun saveHouse(entity: House)
 
     /**
+     * Picks all houses in the local database
+     * @return list of houses
+     */
+    fun getHouses(): Flow<List<House>>
+
+    /**
      * Clears all houses in the local database
      */
     suspend fun clearHouses()
