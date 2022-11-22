@@ -1,3 +1,4 @@
+
 plugins {
     id("com.android.library")
     kotlin("android")
@@ -19,6 +20,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            enableUnitTestCoverage = true
+            enableAndroidTestCoverage = true
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -33,6 +39,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
 }
 
