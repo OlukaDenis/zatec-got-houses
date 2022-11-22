@@ -12,7 +12,7 @@ interface LocalRepository {
      * Saves the house to the local database
      * @param entity house
      */
-    suspend fun saveHouse(entity: House)
+    suspend fun insertHouse(entity: House)
 
     /**
      * Picks all houses in the local database

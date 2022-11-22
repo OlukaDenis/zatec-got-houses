@@ -51,9 +51,10 @@ class FetchMoreRemoteHousesUseCase @Inject constructor(
                 val result = remote.fetchHouses(request)
 
                 result.map {
-                    local.saveHouse(it)
+                    local.insertHouse(it)
                 }
 
+                emit(Resource.Success(result))
             } ?: throw InvalidParameterException()
         } catch (throwable: Throwable) {
             emit(Resource.Error(utilRepository.getNetworkError(throwable)))

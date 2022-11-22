@@ -9,6 +9,7 @@ import javax.inject.Inject
 
 /**
  * Handles picking all houses from the local database
+ *
  * @property dispatcher
  * @property local
  */
