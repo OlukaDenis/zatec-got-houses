@@ -1,8 +1,10 @@
 package com.domain.model
 
 import android.os.Parcelable
+import com.domain.annotations.ExcludeGenerated
 import kotlinx.parcelize.Parcelize
 
+@ExcludeGenerated
 @Parcelize
 data class House(
     val id: Long,

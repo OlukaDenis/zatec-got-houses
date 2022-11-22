@@ -1,5 +1,8 @@
 package com.domain.model.sealed
 
+import com.domain.annotations.ExcludeGenerated
+
+@ExcludeGenerated
 sealed class State<out T> {
     object LoadingState : State<Nothing>()
     data class ErrorState(var exception: Throwable) : State<Nothing>()

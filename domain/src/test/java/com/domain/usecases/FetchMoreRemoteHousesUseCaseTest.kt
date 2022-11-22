@@ -87,4 +87,28 @@ class FetchMoreRemoteHousesUseCaseTest {
             }
         }
     }
+
+    @Test
+    fun `Fetch more remote house list with null param failure`() = runBlocking {
+        // Given
+        coEvery { dispatcher.io } returns Dispatchers.Unconfined
+        coEvery { remoteRepository.fetchHouses(any()) } throws IOException()
+        coEvery { utilRepository.getNetworkError(any()) } returns "Invalid Parameter"
+
+        // When
+        val result = fetchMoreRemoteHousesUseCase()
+
+        // Then
+        result.collect {
+            when(it) {
+                is Resource.Loading -> {}
+                is Resource.Success -> {
+                    assertThat(it.data).isNull()
+                }
+                is Resource.Error -> {
+                    assertThat(it.exception).isEqualTo("Invalid Parameter")
+                }
+            }
+        }
+    }
 }

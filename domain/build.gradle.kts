@@ -8,6 +8,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.domain"
     compileSdk = Versions.ProjectConstants.TARGET_SDK
 

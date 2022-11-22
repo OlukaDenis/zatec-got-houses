@@ -1,5 +1,8 @@
 package com.domain.model.sealed
 
+import com.domain.annotations.ExcludeGenerated
+
+@ExcludeGenerated
 sealed class Resource<out R> {
     /**
      * Returns the loading state

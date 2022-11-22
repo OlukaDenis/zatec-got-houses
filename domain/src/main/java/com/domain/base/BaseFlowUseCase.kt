@@ -1,5 +1,6 @@
 package com.domain.base
 
+import com.domain.annotations.ExcludeGenerated
 import com.domain.dispacher.AppDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
