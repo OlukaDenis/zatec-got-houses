@@ -1,8 +1,8 @@
 object Versions {
 
     const val GRADLE = "7.3.1"
-    const val KOTLIN_STDLIB = "1.7.10"
-    const val KOTLIN_GRADLE = "1.7.10"
+    const val KOTLIN_STDLIB = "1.7.20"
+    const val KOTLIN_GRADLE = "1.7.20"
 
     const val BASE_URL = "https://anapioficeandfire.com/api/"
 
@@ -27,6 +27,14 @@ object Versions {
         const val CORE = "3.21.2"
         const val LITE_GEN = "3.0.0"
         const val ARTIFACT = "3.20.1"
+    }
+
+    object Compose {
+        const val HILT = "1.0.0"
+        const val NAVIGATION = "2.6.0-alpha03"
+        const val VIEWMODEL = "2.6.0-alpha03"
+        const val ACTIVITY_COMPOSE = "1.6.1"
+        const val CORE = "1.3.1"
     }
 
     object Test {
@@ -66,7 +74,7 @@ object Versions {
 
     object Kotlin {
         const val CORE = "1.4.3"
-        const val COROUTINES = "1.5.0"
+        const val COROUTINES = "1.6.4"
     }
 
     object Hilt {

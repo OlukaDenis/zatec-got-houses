@@ -46,6 +46,14 @@ android {
         jvmTarget = "1.8"
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.Compose.CORE
+    }
+
     packagingOptions {
         resources.excludes.add("META-INF/*")
     }
@@ -54,36 +62,29 @@ android {
 dependencies {
 
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     implementation(Dependencies.AndroidX.CORE_KTX)
     implementation(Dependencies.AndroidX.APP_COMPAT)
     implementation(Dependencies.AndroidX.MATERIAL)
-    implementation(Dependencies.AndroidX.CONSTRAINT_LAYOUT)
-    implementation(Dependencies.AndroidX.FRAGMENT_KTX)
-    implementation(Dependencies.AndroidX.ACTIVITY_KTX)
-    implementation(Dependencies.AndroidX.PAGING)
-    implementation(Dependencies.AndroidX.ROOM_PAGING)
-    implementation(Dependencies.AndroidX.ANNOTATION)
-    implementation(Dependencies.AndroidX.LEGACY_SUPPPORT)
-    implementation(Dependencies.AndroidX.WORK_MANAGER_KTX)
-    implementation(Dependencies.AndroidX.SPLASHSCREEN)
+    implementation(Dependencies.AndroidX.LIFECYCLE)
 
-    implementation(Dependencies.AndroidX.VIEWMODEL_KTX)
-    implementation(Dependencies.AndroidX.LIVEDATA_KTX)
-    kapt(Dependencies.AndroidX.LIFECYCLE_PROCESSOR)
-    testImplementation(Dependencies.AndroidX.LIFECYCLE_TESTING)
-
-    implementation(Dependencies.Navigation.NAV_UI)
-    implementation(Dependencies.Navigation.NAV_FRAGMENT)
-    implementation(Dependencies.Navigation.NAV_RUNTIME)
+    implementation(Dependencies.Compose.UI)
+    implementation(Dependencies.Compose.MATERIAL_ICONS)
+    implementation(Dependencies.Compose.MATERIAL)
+    implementation(Dependencies.Compose.UI_PREVIEW)
+    implementation(Dependencies.Compose.ACTIVITY)
+    implementation(Dependencies.Compose.VIEWMODEL)
+    implementation(Dependencies.Compose.NAV)
+    implementation(Dependencies.Compose.HILT)
+    androidTestImplementation(Dependencies.Compose.UI_TEST)
+    debugImplementation(Dependencies.Compose.UI_TOOLING)
 
     implementation(Dependencies.Util.TIMBER)
     implementation(Dependencies.Util.GOOGLE_GSON)
-    implementation(Dependencies.Util.COIL)
-
-    implementation(Dependencies.Network.GSON_CONVERTER)
 
     implementation(Dependencies.Kotlin.COROUTINE_ANDROID)
+    implementation(Dependencies.Kotlin.COROUTINE_CORE)
     testImplementation(Dependencies.Kotlin.COROUTINE_TEST)
     androidTestImplementation(Dependencies.Kotlin.COROUTINE_TEST)
 
