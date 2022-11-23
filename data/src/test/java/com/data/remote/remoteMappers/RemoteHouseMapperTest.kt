@@ -24,5 +24,13 @@ class RemoteHouseMapperTest {
 
         // Then
         Truth.assertThat(house.name).isEqualTo(remoteHouse.name)
+        Truth.assertThat(house.ancestralWeapons).isEqualTo(remoteHouse.ancestralWeapons)
+        Truth.assertThat(house.heir).isEqualTo(remoteHouse.heir)
+        Truth.assertThat(house.coatOfArms).isEqualTo(remoteHouse.coatOfArms)
+        Truth.assertThat(house.cadetBranches).isEqualTo(remoteHouse.cadetBranches)
+        Truth.assertThat(house.currentLord).isEqualTo(remoteHouse.currentLord)
+        Truth.assertThat(house.diedOut).isEqualTo(remoteHouse.diedOut)
+        Truth.assertThat(house.founded).isEqualTo(remoteHouse.founded)
+        Truth.assertThat(house.founder).isEqualTo(remoteHouse.founder)
     }
 }

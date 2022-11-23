@@ -6,6 +6,8 @@ import java.io.IOException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
+import java.util.*
+import kotlin.math.abs
 
 /**
  * A method that extracts and formats the error returned from an endpoint
@@ -39,4 +41,10 @@ fun Throwable.resolveError(): String {
             "Error occurred"
         }
     }
+}
+
+fun getRandomNumber(): Long {
+    val random = Random()
+    val max = 1000000L
+   return abs(random.nextLong()) % max
 }
