@@ -29,4 +29,8 @@ class DatabaseModule {
     @Provides
     fun provideHouseDao(database: AppDatabase) = database.houseDao()
 
+    @Singleton
+    @Provides
+    fun provideRemoteKeyDao(database: AppDatabase) = database.remoteKeyDao()
+
 }

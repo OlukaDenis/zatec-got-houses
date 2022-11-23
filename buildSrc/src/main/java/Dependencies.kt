@@ -2,7 +2,7 @@ object Dependencies {
     object Gradle {
         const val GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE}"
         const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.KOTLIN_STDLIB}"
-        const val KOTLIN_GRADLE = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE}"
+        const val KOTLIN_GRADLE = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_STDLIB}"
     }
 
     object Kotlin {
@@ -18,7 +18,9 @@ object Dependencies {
         const val UI_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.CORE}"
         const val UI_TEST = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.CORE}"
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.Compose.CORE}"
+        const val MANIFEST_TEST = "androidx.compose.ui:ui-test-manifest:${Versions.Compose.CORE}"
         const val MATERIAL_ICONS = "androidx.compose.material:material-icons-extended:${Versions.Compose.CORE}"
+        const val PAGING = "androidx.paging:paging-compose:${Versions.Compose.PAGING}"
         const val ACTIVITY = "androidx.activity:activity-compose:${Versions.Compose.ACTIVITY_COMPOSE}"
         const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.Compose.VIEWMODEL}"
         const val NAV = "androidx.navigation:navigation-compose:${Versions.Compose.NAVIGATION}"

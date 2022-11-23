@@ -11,7 +11,8 @@ import com.domain.model.*
 @TypeConverters(Converters::class)
 @Database(
     entities = [
-        HouseEntity::class
+        HouseEntity::class,
+        RemoteKeyEntity::class
     ],
     version = 1,
     exportSchema = true
@@ -19,4 +20,5 @@ import com.domain.model.*
 
 abstract class AppDatabase : RoomDatabase() {
     abstract fun houseDao(): HouseDao
+    abstract fun remoteKeyDao(): RemoteKeyDao
 }

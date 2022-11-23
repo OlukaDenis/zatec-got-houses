@@ -1,5 +1,6 @@
 package com.data.local.room.dao
 
+import androidx.paging.PagingSource
 import androidx.room.Dao
 import androidx.room.Query
 import com.data.base.BaseDao
@@ -10,6 +11,9 @@ import kotlinx.coroutines.flow.Flow
 interface HouseDao: BaseDao<HouseEntity> {
     @Query("SELECT * FROM houses ORDER BY updatedAt DESC")
     fun get(): Flow<List<HouseEntity>>
+
+    @Query("SELECT * FROM houses ORDER BY updatedAt DESC")
+    fun pagingSource(): PagingSource<Int, HouseEntity>
 
     @Query("SELECT * FROM houses WHERE id = :id")
     fun getById(id: Long): Flow<HouseEntity>

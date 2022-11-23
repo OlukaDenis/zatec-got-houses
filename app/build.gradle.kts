@@ -20,6 +20,9 @@ android {
         versionName = Versions.ProjectConstants.VERSION_NAME
 
         testInstrumentationRunner = Versions.ProjectConstants.TEST_INSTRUMENTATION_RUNNER
+        vectorDrawables {
+            useSupportLibrary = true
+        }
     }
 
     buildTypes {
@@ -55,6 +58,9 @@ android {
     }
 
     packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
         resources.excludes.add("META-INF/*")
     }
 }
@@ -68,8 +74,11 @@ dependencies {
     implementation(Dependencies.AndroidX.APP_COMPAT)
     implementation(Dependencies.AndroidX.MATERIAL)
     implementation(Dependencies.AndroidX.LIFECYCLE)
+    implementation(Dependencies.AndroidX.PAGING)
+    implementation(Dependencies.AndroidX.ROOM_PAGING)
 
     implementation(Dependencies.Compose.UI)
+    implementation(Dependencies.Compose.PAGING)
     implementation(Dependencies.Compose.MATERIAL_ICONS)
     implementation(Dependencies.Compose.MATERIAL)
     implementation(Dependencies.Compose.UI_PREVIEW)
@@ -79,6 +88,7 @@ dependencies {
     implementation(Dependencies.Compose.HILT)
     androidTestImplementation(Dependencies.Compose.UI_TEST)
     debugImplementation(Dependencies.Compose.UI_TOOLING)
+    debugImplementation(Dependencies.Compose.MANIFEST_TEST)
 
     implementation(Dependencies.Util.TIMBER)
     implementation(Dependencies.Util.GOOGLE_GSON)
