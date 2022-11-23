@@ -10,11 +10,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.data.local.utils.getRandomNumber
 import com.domain.model.House
+import com.zatec.got_houses.presentation.house_detail.HouseDetailScreen
 import com.zatec.got_houses.presentation.houses.HouseListScreen
 import com.zatec.got_houses.presentation.houses.components.HouseItem
 import com.zatec.got_houses.presentation.util.Screen
@@ -40,6 +43,18 @@ class HomeActivity : ComponentActivity() {
                     ) {
                         composable(route = Screen.HousesScreen.route) {
                             HouseListScreen(navController = navController)
+                        }
+
+                        composable(
+                            route = Screen.HouseDetailScreen.route + "?houseId={houseId}",
+                            arguments = listOf(
+                                navArgument(name = "houseId") {
+                                    type = NavType.LongType
+                                    defaultValue = -1L
+                                }
+                            )
+                        ) {
+                            HouseDetailScreen(navController = navController)
                         }
                     }
                 }

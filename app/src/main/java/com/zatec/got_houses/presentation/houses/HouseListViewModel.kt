@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
+import com.data.local.localMappers.LocalHouseMapper
 import com.data.local.mediators.HouseMediatorUseCase
 import com.data.local.model.HouseEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -12,9 +13,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HouseListViewModel @Inject constructor(
-    private val houseMediatorUseCase: HouseMediatorUseCase
+    private val houseMediatorUseCase: HouseMediatorUseCase,
+    private val localHouseMapper: LocalHouseMapper
 ) : ViewModel() {
 
     val houses: Flow<PagingData<HouseEntity>> =
         houseMediatorUseCase().cachedIn(viewModelScope)
+
+    fun domainHouse(entity: HouseEntity) = localHouseMapper.toDomain(entity)
 }

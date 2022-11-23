@@ -1,14 +1,13 @@
 package com.zatec.got_houses.presentation.houses
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -19,6 +18,7 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.zatec.got_houses.presentation.houses.components.HouseItem
+import com.zatec.got_houses.presentation.util.Screen
 import com.zatec.got_houses.ui.theme.Dimens.spacing_16
 import com.zatec.got_houses.ui.theme.Dimens.spacing_4
 import com.zatec.got_houses.ui.theme.Dimens.spacing_8
@@ -35,17 +35,21 @@ fun HouseListScreen(
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {
-            TopAppBar(elevation = spacing_4) {
-                Text(
-                    text = "Home",
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colors.onPrimary,
-                    textAlign = TextAlign.Center
-                )
-            }
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Home",
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colors.onPrimary,
+                        textAlign = TextAlign.Center
+                    )
+                },
+                elevation = spacing_4
+            )
         }
     ) {
         Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it)
@@ -62,7 +66,7 @@ fun HouseListScreen(
                     }
                     is LoadState.Error -> {
 //                        Error(message = state.error.message ?: "")
-                        Timber.d( state.error.message)
+                        Timber.d(state.error.message)
                     }
                     else -> {}
                 }
@@ -75,20 +79,25 @@ fun HouseListScreen(
                     }
                     is LoadState.Error -> {
 //                        Error(message = state.error.message ?: "")
-                        Timber.d( state.error.message)
+                        Timber.d(state.error.message)
                     }
                     else -> {}
                 }
 
                 items(houses) { house ->
                     house?.let { entity ->
-                       HouseItem(
-                           house = entity,
-                           modifier = Modifier
-                               .fillMaxWidth(),
-                           onClick = {}
-                       )
-                   }
+
+                        HouseItem(
+                            house = viewModel.domainHouse(entity),
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable {
+                                    navController.navigate(
+                                        Screen.HouseDetailScreen.route + "?houseId=${entity.id}"
+                                    )
+                                },
+                        )
+                    }
                 }
 
                 when (val state = houses.loadState.append) {
@@ -99,7 +108,7 @@ fun HouseListScreen(
                     }
                     is LoadState.Error -> {
 //                        Error(message = state.error.message ?: "")
-                        Timber.d( state.error.message)
+                        Timber.d(state.error.message)
                     }
                     else -> {}
                 }
@@ -110,11 +119,18 @@ fun HouseListScreen(
 
 private fun LazyListScope.loading() {
     item {
-        CircularProgressIndicator(modifier = Modifier.padding(spacing_16))
+        Box(contentAlignment = Alignment.Center) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                CircularProgressIndicator(modifier = Modifier.padding(spacing_8), strokeWidth = spacing_4)
+            }
+        }
     }
 }
 
-private fun LazyListScope.Error(
+private fun LazyListScope.error(
     message: String
 ) {
     item {
