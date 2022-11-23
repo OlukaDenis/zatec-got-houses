@@ -7,8 +7,22 @@ object Dependencies {
 
     object Kotlin {
         const val COROUTINE_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Kotlin.COROUTINES}"
+        const val COROUTINE_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.Kotlin.COROUTINES}"
         const val COROUTINE_TEST = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.Kotlin.COROUTINES}"
         const val COROUTINES_PLAY_SERVICE = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:${Versions.Kotlin.COROUTINES}"
+    }
+
+    object Compose {
+        const val UI = "androidx.compose.ui:ui:${Versions.Compose.CORE}"
+        const val MATERIAL = "androidx.compose.material:material:${Versions.Compose.CORE}"
+        const val UI_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.CORE}"
+        const val UI_TEST = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.CORE}"
+        const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.Compose.CORE}"
+        const val MATERIAL_ICONS = "androidx.compose.material:material-icons-extended:${Versions.Compose.CORE}"
+        const val ACTIVITY = "androidx.activity:activity-compose:${Versions.Compose.ACTIVITY_COMPOSE}"
+        const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.Compose.VIEWMODEL}"
+        const val NAV = "androidx.navigation:navigation-compose:${Versions.Compose.NAVIGATION}"
+        const val HILT = "androidx.hilt:hilt-navigation-compose:${Versions.Compose.HILT}"
     }
 
     object Ktlint {
@@ -27,6 +41,7 @@ object Dependencies {
         const val LIVEDATA_KTX = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.AndroidX.LIFECYCLE_KTX}"
         const val LIFECYCLE_PROCESSOR = "androidx.lifecycle:lifecycle-compiler:${Versions.AndroidX.LIFECYCLE_KTX}"
         const val LIFECYCLE_TESTING = "androidx.lifecycle:lifecycle-runtime-testing:${Versions.AndroidX.LIFECYCLE_KTX}"
+        const val LIFECYCLE = "androidx.lifecycle:lifecycle-runtime:${Versions.AndroidX.LIFECYCLE_KTX}"
         const val WORK_MANAGER_KTX = "androidx.work:work-runtime-ktx:${Versions.AndroidX.WORK_MANAGER_KTX}"
         const val CONSTRAINT_LAYOUT = "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.CONSTRAINT_LAYOUT}"
         const val VIEW_PAGER = "androidx.viewpager2:viewpager2:${Versions.AndroidX.VIEW_PAGER}"

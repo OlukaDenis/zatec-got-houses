@@ -1,13 +1,13 @@
-package com.domain.utils
+package com.data.utils
 
+import com.data.remote.model.RemoteHouse
 import com.domain.model.House
 
-fun getDummyHouses(): List<House> {
-    val list = mutableListOf<House>()
+fun getDummyHouses(): List<RemoteHouse> {
+    val list = mutableListOf<RemoteHouse>()
     ('a'..'z').forEachIndexed { index, c ->
         list.add(
-            House(
-                id = index.toLong(),
+            RemoteHouse(
                 ancestralWeapons = emptyList(),
                 cadetBranches = emptyList(),
                 coatOfArms = c.toString(),
@@ -34,4 +34,4 @@ fun getDummyHouses(): List<House> {
     return list
 }
 
-val dummyHouse = House(10, emptyList(), emptyList(), "", "", "", "", "Denis", "", "House of Denis", "", "", emptyList(), emptyList(), emptyList(), "", "", "", "")
+val dummyRemoteHouse = RemoteHouse(emptyList(), emptyList(), "", "", "", "", "Denis", "", "House of Denis", "", "", emptyList(), emptyList(), emptyList(), "", "", "", "")

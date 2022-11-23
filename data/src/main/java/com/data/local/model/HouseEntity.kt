@@ -1,12 +1,13 @@
-package com.domain.model
+package com.data.local.model
 
-import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.domain.annotations.ExcludeGenerated
-import kotlinx.parcelize.Parcelize
 
 @ExcludeGenerated
-@Parcelize
-data class House(
+@Entity(tableName = "houses")
+data class HouseEntity(
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
     val ancestralWeapons: List<String>,
     val cadetBranches: List<String>,
@@ -26,4 +27,4 @@ data class House(
     val words: String,
     val updatedAt: String,
     val createdAt: String
-) : Parcelable
+)

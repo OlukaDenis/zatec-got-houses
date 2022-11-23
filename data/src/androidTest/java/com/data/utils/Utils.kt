@@ -1,5 +1,7 @@
-package com.domain.utils
+package com.data.utils
 
+import com.data.local.utils.getRandomNumber
+import com.data.remote.model.RemoteHouse
 import com.domain.model.House
 
 fun getDummyHouses(): List<House> {
@@ -7,7 +9,7 @@ fun getDummyHouses(): List<House> {
     ('a'..'z').forEachIndexed { index, c ->
         list.add(
             House(
-                id = index.toLong(),
+                id = getRandomNumber(),
                 ancestralWeapons = emptyList(),
                 cadetBranches = emptyList(),
                 coatOfArms = c.toString(),
@@ -34,4 +36,24 @@ fun getDummyHouses(): List<House> {
     return list
 }
 
-val dummyHouse = House(10, emptyList(), emptyList(), "", "", "", "", "Denis", "", "House of Denis", "", "", emptyList(), emptyList(), emptyList(), "", "", "", "")
+val dummyHouse = House(
+    getRandomNumber(),
+    emptyList(),
+    emptyList(),
+    "",
+    "",
+    "",
+    "",
+    "Denis",
+    "",
+    "House of Denis",
+    "",
+    "",
+    emptyList(),
+    emptyList(),
+    emptyList(),
+    "",
+    "",
+    "",
+    ""
+)
