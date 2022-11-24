@@ -30,7 +30,6 @@ fun HouseListScreen(
     viewModel: HouseListViewModel = hiltViewModel()
 ) {
     val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
 
     Scaffold(
         scaffoldState = scaffoldState,

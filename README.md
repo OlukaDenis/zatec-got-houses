@@ -76,9 +76,12 @@ The command below runs tests and generates test coverage
 
 ### Test report
 
- - For combined coverage: ./gradlew :rootCoverageReport
- - For module specific coverage (all modules): ./gradlew coverageReport
- - For module specific coverage (single module): ./gradlew :yourModule:coverageReport
+ - For combined coverage: `./gradlew :rootCoverageReport`
+ - For module specific coverage (all modules): `./gradlew coverageReport`
+ - For module specific coverage (single module):
+   Data module:  `./gradlew :data:coverageReport`
+   Domain module:  `./gradlew :domain:coverageReport`
+   App module:  `./gradlew :app:coverageReport`
 
 Get the test report from `/<root-project-directory>/build/reports/jacoco/index.html` and then run it in your preferred browser
 

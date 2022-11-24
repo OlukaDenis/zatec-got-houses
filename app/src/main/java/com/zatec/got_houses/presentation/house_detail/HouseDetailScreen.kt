@@ -36,7 +36,6 @@ fun HouseDetailScreen(
     viewModel: HouseDetailViewModel = hiltViewModel()
 ) {
     val scaffoldState = rememberScaffoldState()
-    val scope = rememberCoroutineScope()
 
     val houseState = viewModel.house.value
     val name = if (houseState.house == null) "" else houseState.house.name
