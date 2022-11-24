@@ -6,9 +6,10 @@ This application fetches Game of Thrones houses from and external [Game of Thron
 
 
 <table>
- <th>
-  <td>Home </td>
- </th>
+ <tr>
+   <th>Home </th>
+   <th>House Details </th>
+ </tr>
  <tr>
   <td><img src="https://user-images.githubusercontent.com/37341054/203771561-e54462b5-0e67-4fd5-82f2-44654061cd44.jpg" /> </td>
   <td><img src="https://user-images.githubusercontent.com/37341054/203771590-11f7306c-0bb7-4752-89d1-ffc965099e35.jpg" /> </td>
