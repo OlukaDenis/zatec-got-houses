@@ -19,6 +19,8 @@ This application fetches Game of Thrones houses from and external [Game of Thron
 
 ## Project Structure
 
+A mutli-module project that clean architecure principles.
+
 ### Data module
 Contains the data logic from local source or remote API.
 Implements domain and network interfaces including retrofit services and api client.
@@ -79,11 +81,14 @@ The command below runs tests and generates test coverage
  - For combined coverage: `./gradlew :rootCoverageReport`
  - For module specific coverage (all modules): `./gradlew coverageReport`
  - For module specific coverage (single module):
+ 
    Data module:  `./gradlew :data:coverageReport`
+   
    Domain module:  `./gradlew :domain:coverageReport`
+   
    App module:  `./gradlew :app:coverageReport`
 
-Get the test report from `/<root-project-directory>/build/reports/jacoco/index.html` and then run it in your preferred browser
+Get the ovaerall test report from `/<root-project-directory>/build/reports/jacoco/index.html` and then run it in your preferred browser
 
 ### Tes coverage
 <img width="1680" alt="Screenshot 2022-11-24 at 13 24 35" src="https://user-images.githubusercontent.com/37341054/203770606-09cfe78b-0908-41d2-a4b3-9449c40657cc.png">
