@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.cfg.pseudocode.and
 
 plugins {
     id("com.android.application")
@@ -19,7 +20,7 @@ android {
         versionCode = Versions.ProjectConstants.VERSION_CODE
         versionName = Versions.ProjectConstants.VERSION_NAME
 
-        testInstrumentationRunner = Versions.ProjectConstants.TEST_INSTRUMENTATION_RUNNER
+        testInstrumentationRunner = "com.zatec.got_houses.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -102,15 +103,22 @@ dependencies {
     implementation(Dependencies.Hilt.HILT_ANDROID)
     kapt(Dependencies.Hilt.HILT_ANDROID_COMPILER)
     kapt(Dependencies.Hilt.HILT_COMPILER)
+    testImplementation(Dependencies.Hilt.HILT_TEST)
+    androidTestImplementation(Dependencies.Hilt.HILT_TEST)
+    kaptAndroidTest(Dependencies.Hilt.HILT_ANDROID_COMPILER)
 
     testImplementation(Dependencies.Test.TRUTHY)
     testImplementation(Dependencies.Test.JUNIT)
     testImplementation(Dependencies.Test.MOCKK)
     testImplementation(Dependencies.Test.ROBOELECTRIC)
     testImplementation(Dependencies.Test.CORE_TESTING)
+    testImplementation(Dependencies.Test.CORE)
     androidTestImplementation(Dependencies.Test.JUNIT_EXT)
     androidTestImplementation(Dependencies.Test.ESPRESSO)
     androidTestImplementation(Dependencies.Test.MOCKK)
     androidTestImplementation(Dependencies.Test.TRUTHY)
     androidTestImplementation(Dependencies.Test.CORE_TESTING)
+    androidTestImplementation(Dependencies.Test.CORE)
+    androidTestImplementation(Dependencies.Test.RULES)
+    androidTestImplementation(Dependencies.Test.RUNNER)
 }

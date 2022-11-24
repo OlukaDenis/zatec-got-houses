@@ -54,7 +54,6 @@ android {
 }
 
 dependencies {
-    implementation(Dependencies.Gradle.KOTLIN_STDLIB)
 
     implementation(Dependencies.AndroidX.DATA_STORE)
     implementation(Dependencies.AndroidX.DATA_STORE_PREFERENCES)

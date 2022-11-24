@@ -53,7 +53,19 @@ rootCoverage {
         "**/*_Factory*.*",
         "**/*_Provide*Factory*.*",
         "**/*_Impl*.*",
+        "**/*_MyApp*.*",
+        "**/*_GeneratedInjector*.*",
         "**/*Database*.*",
+
+        "**/*Theme*.*",
+        "**/*Color*.*",
+        "**/*Type*.*",
+        "**/*Color*.*",
+        "**/*Shape*.*",
+        "**/*Screen*.*",
+
+        "**/*Mediator*.*",
+
         "**/*Extensions*.*",
         "**/*Resource*.*",
         "**/*BaseState*.*",

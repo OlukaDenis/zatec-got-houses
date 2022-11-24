@@ -6,7 +6,7 @@ import com.domain.model.House
 
 fun getDummyHouses(): List<House> {
     val list = mutableListOf<House>()
-    ('a'..'z').forEachIndexed { index, c ->
+    ('a'..'z').forEachIndexed { _, c ->
         list.add(
             House(
                 id = getRandomNumber(),

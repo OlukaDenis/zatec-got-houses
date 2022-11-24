@@ -1,7 +1,9 @@
 package com.zatec.got_houses.ui.theme
 
 import androidx.compose.ui.unit.dp
+import com.domain.annotations.ExcludeGenerated
 
+@ExcludeGenerated
 object Dimens {
     val spacing_0 = 0.dp
     val spacing_0_5 = 0.5.dp

@@ -17,9 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HouseDetailViewModel @Inject constructor(
-    private val localHouseMapper: LocalHouseMapper,
     private val getLocalHouseByIdUseCase: GetLocalHouseByIdUseCase,
-    savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _house = mutableStateOf(
@@ -29,6 +28,10 @@ class HouseDetailViewModel @Inject constructor(
     private var currentHouseId: Long? = null
 
     init {
+        getSelectedHouse()
+    }
+
+    fun getSelectedHouse() {
         savedStateHandle.get<Long>("houseId")?.let { houseId ->
             Timber.d("Got houseId: $houseId")
             if (houseId != -1L) {
@@ -48,5 +51,4 @@ class HouseDetailViewModel @Inject constructor(
         }
     }
 
-    fun domainHouse(entity: HouseEntity) = localHouseMapper.toDomain(entity)
 }
