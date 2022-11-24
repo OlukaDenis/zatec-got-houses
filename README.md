@@ -77,12 +77,6 @@ Run all tests
 ./gradlew test
 ```
 
-The command below runs tests and generates test coverage
-
-```
-./gradlew jacocoAndroidTestReport
-```
-
 ### Test report
 
  - For combined coverage: `./gradlew :rootCoverageReport`
