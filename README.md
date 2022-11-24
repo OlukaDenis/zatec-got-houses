@@ -1,9 +1,16 @@
 # G O T Houses
 
+## About
 This application fetches Game of Thrones houses from and external [Game of Thrones API](https://anapioficeandfire.com/) and displays them to the user.
 
-### Screenshots
+## Features
+The android app lets you:
+- View a list of game of thrones' houses
+- View more info of a specific house
 
+
+
+### Screenshots
 
 <table>
  <tr>
@@ -45,7 +52,7 @@ git clone git@github.com:OlukaDenis/zatec-got-houses.git
 - Kotlin
 - Java Development Kit (JDK) 11
 - Android Studio Bumblebee version and above
-- Android SDK
+- Android SDK tools
 - AGP 7
 
 ## Code quality
@@ -90,18 +97,23 @@ The command below runs tests and generates test coverage
 
 Get the ovaerall test report from `/<root-project-directory>/build/reports/jacoco/index.html` and then run it in your preferred browser
 
-### Tes coverage
+### Test coverage
+
 <img width="1680" alt="Screenshot 2022-11-24 at 13 24 35" src="https://user-images.githubusercontent.com/37341054/203770606-09cfe78b-0908-41d2-a4b3-9449c40657cc.png">
 
 
-## Contributing code
-
-### Language
-
-The codebase is entirely Kotlin and all files must be written in Kotlin
 
 ### Architecture
 
-The project use MVVM architecture
+The project is built entirely on MVVM architecture.
+
+## Contributing 
+
+GOT Houses app is a free and open source project developed by volunteers. Any contributions are welcome. Here are a few ways you can help:
+ * [Report bugs and make suggestions.](https://github.com/OlukaDenis/zatec-got-houses/issues)
+ * Write some code. Please follow the code style used in the project to make a review process faster.
+ 
+The codebase is entirely Kotlin and all files must be written in Kotlin
+
 
 Kudos!
