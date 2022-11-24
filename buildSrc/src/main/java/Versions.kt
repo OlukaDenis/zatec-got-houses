@@ -1,8 +1,7 @@
 object Versions {
 
     const val GRADLE = "7.3.1"
-    const val KOTLIN_STDLIB = "1.7.20"
-    const val KOTLIN_GRADLE = "1.7.20"
+    const val KOTLIN_STDLIB = "1.7.10"
 
     const val BASE_URL = "https://anapioficeandfire.com/api/"
 
@@ -30,6 +29,7 @@ object Versions {
     }
 
     object Compose {
+        const val PAGING = "1.0.0-alpha17"
         const val HILT = "1.0.0"
         const val NAVIGATION = "2.6.0-alpha03"
         const val VIEWMODEL = "2.6.0-alpha03"

@@ -2,7 +2,7 @@ object Dependencies {
     object Gradle {
         const val GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE}"
         const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.KOTLIN_STDLIB}"
-        const val KOTLIN_GRADLE = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE}"
+        const val KOTLIN_GRADLE = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_STDLIB}"
     }
 
     object Kotlin {
@@ -18,7 +18,9 @@ object Dependencies {
         const val UI_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.Compose.CORE}"
         const val UI_TEST = "androidx.compose.ui:ui-test-junit4:${Versions.Compose.CORE}"
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.Compose.CORE}"
+        const val MANIFEST_TEST = "androidx.compose.ui:ui-test-manifest:${Versions.Compose.CORE}"
         const val MATERIAL_ICONS = "androidx.compose.material:material-icons-extended:${Versions.Compose.CORE}"
+        const val PAGING = "androidx.paging:paging-compose:${Versions.Compose.PAGING}"
         const val ACTIVITY = "androidx.activity:activity-compose:${Versions.Compose.ACTIVITY_COMPOSE}"
         const val VIEWMODEL = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.Compose.VIEWMODEL}"
         const val NAV = "androidx.navigation:navigation-compose:${Versions.Compose.NAVIGATION}"
@@ -60,13 +62,12 @@ object Dependencies {
 
     object Test {
         const val CORE = "androidx.test:core:${Versions.Test.CORE}"
+        const val RUNNER = "androidx.test:runner:${Versions.Test.CORE}"
         const val RULES = "androidx.test:rules:${Versions.Test.CORE}"
         const val JUNIT = "junit:junit:${Versions.Test.JUNIT}"
         const val JUNIT_EXT = "androidx.test.ext:junit:${Versions.Test.JUNIT_EXT}"
-        const val JACOCO = "org.jacoco:org.jacoco.core:${Versions.Test.JACOCO}"
         const val TRUTHY = "com.google.truth:truth:${Versions.Test.TRUTHY}"
         const val MOCKK = "io.mockk:mockk:${Versions.Test.MOCKK}"
-        const val JACOCO_ANDROID = "com.dicedmelon.gradle:jacoco-android:${Versions.Test.JACOCO_ANDROID}"
         const val ESPRESSO = "androidx.test.espresso:espresso-core:${Versions.Test.ESPRESSO}"
         const val CORE_TESTING = "androidx.arch.core:core-testing:${Versions.Test.CORE_TESTING}"
         const val ROBOELECTRIC = "org.robolectric:robolectric:${Versions.Test.ROBOELECTRIC}"

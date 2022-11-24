@@ -1,5 +1,6 @@
 package com.data.remote.remoteMappers
 
+import com.data.local.utils.getRandomNumber
 import com.data.remote.model.RemoteHouse
 import com.domain.model.House
 import javax.inject.Inject
@@ -7,7 +8,7 @@ import javax.inject.Inject
 class RemoteHouseMapper @Inject constructor() : BaseRemoteMapper<RemoteHouse, House>{
     override fun toDomain(entity: RemoteHouse): House {
         return House(
-            id = 0L,
+            id = getRandomNumber(),
             ancestralWeapons = entity.ancestralWeapons.orEmpty(),
             coatOfArms = entity.coatOfArms.orEmpty(),
             cadetBranches = entity.cadetBranches.orEmpty(),

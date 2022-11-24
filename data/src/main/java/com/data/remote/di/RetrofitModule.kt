@@ -1,6 +1,6 @@
 package com.data.remote.di
 
-import com.domain.BuildConfig
+import com.data.BuildConfig
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -36,7 +36,7 @@ class RetrofitModule {
     ): Retrofit {
         val builder = Retrofit.Builder()
         builder.apply {
-            baseUrl("BuildConfig.BASE_URL")
+            baseUrl(BuildConfig.BASE_URL)
             client(client)
             addConverterFactory(converterFactory)
         }
